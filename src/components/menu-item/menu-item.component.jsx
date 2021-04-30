@@ -6,7 +6,7 @@ const MenuItem = ({ title, imageUrl, size, history }) => {
   return (
     <div
       className={`menu-item ${size}`}
-      onClick={() => history.push("/" + title)}
+      onClick={() => history.push("/shop/" + title)}
     >
       <div
         className="background-image"
