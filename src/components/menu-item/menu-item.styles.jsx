@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 const sizeSmall = css`
-  height: 21rem;
+  height: 20rem;
 `;
 
 const sizeLarge = css`
-  height: 35rem;
+  height: 32rem;
 `;
 
 const getSize = (props) => {
@@ -20,8 +20,8 @@ export const BackgroundImageContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  height: 90px;
-  padding: 0 25px;
+  height: 5rem;
+  padding: 0 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,13 +35,13 @@ export const ContentContainer = styled.div`
 export const TitleContainer = styled.h1`
   font-weight: bold;
   margin-bottom: 6px;
-  font-size: 22px;
+  font-size: 1.5rem;
   color: #4a4a4a;
 `;
 
 export const SubtitleContainer = styled.span`
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 
 export const MenuItemContainer = styled.div`
