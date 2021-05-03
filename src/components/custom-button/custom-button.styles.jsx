@@ -27,6 +27,7 @@ const googleSignInStyles = css`
   background-color: #4285f4;
   color: white;
   border: none;
+  margin-left: 1rem;
   &:hover {
     background-color: #357ae8;
     border: none;

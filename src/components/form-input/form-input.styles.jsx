@@ -21,7 +21,7 @@ export const GroupContainer = styled.div`
 
 export const FormInputLabelContainer = styled.label`
   color: grey;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: normal;
   position: absolute;
   pointer-events: none;

@@ -7,7 +7,7 @@ export const SignInContainer = styled.div`
 `;
 export const TitleContainer = styled.h2`
   margin: 10px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 export const ButtonsContainer = styled.div`
   display: flex;
@@ -15,5 +15,5 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const SubtitleContainer = styled.span`
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
