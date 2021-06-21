@@ -8,6 +8,10 @@ export const CheckoutItemContainer = styled.div`
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    font-size: 18px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -29,6 +33,10 @@ export const QuantityContainer = styled.span`
   padding-left: 20px;
   display: flex;
   font-size: 1.3rem;
+
+  @media screen and (max-width: 800px) {
+    width: 22%;
+  }
 `;
 
 export const ArrowContainer = styled.div`

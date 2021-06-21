@@ -21,7 +21,7 @@ export const BackgroundImageContainer = styled.div`
 
 export const ContentContainer = styled.div`
   height: 5rem;
-  padding: 0 2rem 0.5rem;
+  padding: 0 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +30,18 @@ export const ContentContainer = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
+
+  @media screen and (min-width: 940px) {
+    padding: 0 2rem 0.5rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 5rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 0.1rem 0.2rem;
+  }
 `;
 
 export const TitleContainer = styled.h1`
@@ -37,11 +49,26 @@ export const TitleContainer = styled.h1`
   margin-bottom: 6px;
   font-size: 1.5rem;
   color: #4a4a4a;
+
+  @media screen and (max-width: 800px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const SubtitleContainer = styled.span`
   font-weight: lighter;
   font-size: 1rem;
+  @media screen and (max-width: 800px) {
+    font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const MenuItemContainer = styled.div`
@@ -75,5 +102,9 @@ export const MenuItemContainer = styled.div`
 
   &:last-child {
     margin-left: 7.5px;
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
   }
 `;
