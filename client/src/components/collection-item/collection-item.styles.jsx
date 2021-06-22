@@ -39,6 +39,10 @@ export const PriceContainer = styled.span`
 export const NameContainer = styled.span`
   width: 90%;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 800px) {
+    width: 80%;
+  }
 `;
 
 export const ImageContainer = styled.img`
@@ -62,6 +66,7 @@ export const AddButton = styled(CustomButton)`
     opacity: 0.9;
     min-width: unset;
     padding: 0 10px;
+    font-size: 0.7rem;
   }
 `;
 
@@ -71,4 +76,7 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+  @media screen and (max-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
