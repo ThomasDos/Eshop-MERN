@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+
 import { connect } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-// import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import {
   googleSignInStart,
   emailSignInStart,
@@ -76,8 +76,8 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
-  emailSignInStart: (email, password) =>
-    dispatch(emailSignInStart({ email, password })),
+  emailSignInStart: (email, password, cart) =>
+    dispatch(emailSignInStart({ email, password, cart })),
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);

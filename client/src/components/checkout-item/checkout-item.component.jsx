@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import {
   clearItemFromCart,
-  reduceItemFromCart,
+  removeItem,
   addItem,
 } from "./../../redux/cart/cart.actions";
 
@@ -21,7 +21,7 @@ const CheckoutItem = ({
   cartItem,
   cartItem: { name, imageUrl, price, quantity },
   clearItemFromCart,
-  reduceItemFromCart,
+  removeItem,
   addItem,
 }) => {
   return (
@@ -33,9 +33,7 @@ const CheckoutItem = ({
       <QuantityContainer>
         <ArrowContainer
           onClick={() => {
-            quantity === 1
-              ? clearItemFromCart(cartItem)
-              : reduceItemFromCart(cartItem);
+            quantity === 1 ? clearItemFromCart(cartItem) : removeItem(cartItem);
           }}
         >
           &#10094;
@@ -59,7 +57,7 @@ const CheckoutItem = ({
 
 const mapDispatchToProps = (dispatch) => ({
   clearItemFromCart: (item) => dispatch(clearItemFromCart(item)),
-  reduceItemFromCart: (item) => dispatch(reduceItemFromCart(item)),
+  removeItem: (item) => dispatch(removeItem(item)),
   addItem: (item) => dispatch(addItem(item)),
 });
 

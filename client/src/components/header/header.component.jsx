@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { auth } from "../../firebase/firebase.utils";
+
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "./../cart-icon/cart-icon.component";
 import CartDropdown from "./../cart-dropdown/cart-dropdown.component";
@@ -45,7 +45,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  signOutStart: () => dispatch(signOutStart()),
+  signOutStart: (userInfos) => dispatch(signOutStart(userInfos)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

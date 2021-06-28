@@ -12,16 +12,18 @@ const config = {
   measurementId: "G-HZ9YEWLSM1",
 };
 
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
-
     try {
       await userRef.set({
         displayName,
@@ -37,18 +39,31 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-firebase.initializeApp(config);
+export const getUserCartRef = async (userId) => {
+  const cartsRef = firestore.collection("carts").where("userId", "==", userId);
+  const snapShot = await cartsRef.get();
 
-export const addCollectionandDocuments = async (
+  if (snapShot.empty) {
+    const cartDocRef = firestore.collection("carts").doc();
+    await cartDocRef.set({ userId, cartItems: [] });
+    return cartDocRef;
+  } else {
+    return snapShot.docs[0].ref;
+  }
+};
+
+export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
 ) => {
   const collectionRef = firestore.collection(collectionKey);
+
   const batch = firestore.batch();
-  objectsToAdd.forEach((object) => {
+  objectsToAdd.forEach((obj) => {
     const newDocRef = collectionRef.doc();
-    batch.set(newDocRef, object);
+    batch.set(newDocRef, obj);
   });
+
   return await batch.commit();
 };
 
@@ -84,7 +99,6 @@ export const firestore = firebase.firestore();
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
-
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
