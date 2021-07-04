@@ -26,6 +26,9 @@ export const ImageContainer = styled.div`
 
 export const InfoContainer = styled.span`
   width: 23%;
+  @media screen and (max-width: 800px) {
+    padding-left: 0.4rem;
+  }
 `;
 
 export const QuantityContainer = styled.span`
@@ -42,6 +45,10 @@ export const QuantityContainer = styled.span`
 export const ArrowContainer = styled.div`
   cursor: pointer;
   font-weight: 500;
+  @media (max-width: 800px) {
+    font-size: 1rem;
+    margin-left: -0.2rem;
+  }
 `;
 
 export const ValueContainer = styled.div`

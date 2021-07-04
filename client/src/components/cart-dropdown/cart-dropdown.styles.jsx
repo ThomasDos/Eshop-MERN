@@ -16,6 +16,9 @@ export const CartDropdownContainer = styled.div`
   button {
     margin-top: auto;
   }
+  @media (max-width: 800px) {
+    width: 300px;
+  }
 `;
 
 export const CartItems = styled.div`
